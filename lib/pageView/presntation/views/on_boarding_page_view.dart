@@ -86,7 +86,7 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
                         horizontal: 10, vertical: 20),
                     child: Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(30),
                         color: primary,
                       ),
 
@@ -101,7 +101,7 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
                                 ? "Get Started"
                                 : "Next",
                             style: const TextStyle(
-                                fontSize: 16,
+                                fontSize: 15,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold)),
                       ),
@@ -134,7 +134,7 @@ List pageViewsItems = [
   ),
   const PageViewItem(
     image:
-        "https://img.freepik.com/premium-vector/illustration-blood-donation-cheerful-cartoon-character-encouraging-blood-donation_1300528-9489.jpg?uid=R158354479&ga=GA1.1.396071233.1723121552",
+        "https://img.freepik.com/premium-vector/red-clock-with-number-2-it_1161162-852983.jpg?uid=R158354479&ga=GA1.1.396071233.1723121552&semt=ais_hybrid",
     text: 'Time for a Health Break',
     text2:
         "It's always the right time to prioritize your mental well-being. Take a moment for yourself today",
