@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:meals_splasher/constants/colors.dart';
-import 'package:meals_splasher/user_only/home/home_screen.dart';
-import 'package:meals_splasher/user_only/home/navgation_bar.dart';
-import 'package:meals_splasher/pageView/presntation/views/page_view_item.dart';
+import 'package:therapy_splasher/constants/clors.dart';
+import 'package:therapy_splasher/pageView/presntation/views/page_view_item.dart';
 
 class OnBoardingPageView extends StatefulWidget {
   const OnBoardingPageView({super.key});
@@ -40,8 +38,8 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
               // const SizedBox(height: 20,),
               GestureDetector(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Home()));
+                    // Navigator.push(context,
+                    //     MaterialPageRoute(builder: (context) => ()));
                   },
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -79,8 +77,8 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
                         curve: Curves.easeIn,
                       );
                     } else {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Home()));
+                      // Navigator.push(context,
+                      //     MaterialPageRoute(builder: (context) => Home()));
                     }
                   },
                   child: Padding(
@@ -122,22 +120,23 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
 List pageViewsItems = [
   const PageViewItem(
     image:
-        "https://img.freepik.com/premium-vector/food-deliverying_662093-1609.jpg?uid=R158354479&ga=GA1.1.396071233.1723121552&semt=ais_hybrid",
-    text: 'Find Food You Love',
+        "https://img.freepik.com/free-vector/health-professional-team-concept_23-2148494662.jpg?uid=R158354479&ga=GA1.1.396071233.1723121552",
+    text: "Expert Care, Just a Tap Away",
     text2:
-        'Discover the best foods from over 1,000 restaurants and fast delivery to your doorstep',
+        '''Our dedicated professionals are here to support your journey to mental wellness. Let's get started together!''',
   ),
   const PageViewItem(
     image:
-        "https://img.freepik.com/premium-vector/food-delivery-man-riding-scooter_51635-8662.jpg?w=740",
-    text: 'Fast Delivery',
-    text2: 'Fast food delivery to your home, office wherever you are',
+        "https://img.freepik.com/free-vector/set-people-donating-blood_52683-19851.jpg?uid=R158354479&ga=GA1.1.396071233.1723121552",
+    text: 'Support Your Health, Support Others',
+    text2:
+        'Donating blood is a small act with a big impact. Join us in promoting health and wellness for all!',
   ),
   const PageViewItem(
     image:
-        "https://img.freepik.com/premium-vector/phone-with-hamburger-it-that-has-green-circle-it_877577-10.jpg?uid=R158354479&ga=GA1.1.396071233.1723121552&semt=ais_hybrid",
-    text: 'Live Tracking',
+        "https://img.freepik.com/premium-vector/illustration-blood-donation-cheerful-cartoon-character-encouraging-blood-donation_1300528-9489.jpg?uid=R158354479&ga=GA1.1.396071233.1723121552",
+    text: 'Time for a Health Break',
     text2:
-        'Real time tracking of your food on the app once you placed the order',
+        "It's always the right time to prioritize your mental well-being. Take a moment for yourself today",
   ),
 ];
