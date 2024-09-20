@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:therapy_splasher/constants/clors.dart';
 import 'package:therapy_splasher/pageView/presntation/views/page_view_item.dart';
 
@@ -12,17 +13,16 @@ class OnBoardingPageView extends StatefulWidget {
 class _OnBoardingPageViewState extends State<OnBoardingPageView> {
   late PageController pageController;
   int currentindex = 0;
+
   @override
   void initState() {
     pageController = PageController(initialPage: 0);
-    // TODO: implement initState
     super.initState();
   }
 
   @override
   void dispose() {
     pageController.dispose();
-    // TODO: implement dispose
     super.dispose();
   }
 
@@ -35,11 +35,9 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // const SizedBox(height: 20,),
               GestureDetector(
                   onTap: () {
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (context) => ()));
+                    // Navigator.push(context, MaterialPageRoute(builder: (context) => ()));
                   },
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -62,23 +60,42 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
                         currentindex = index;
                       });
                     },
-                    controller: pageController,
-                    itemCount: 3,
+                    controller: pageController, // Same controller here
+                    itemCount: pageViewsItems.length,
                     itemBuilder: (context, int index) {
                       return pageViewsItems[index];
                     }),
               ),
+
+              // SmoothPageIndicator using the same pageController
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SmoothPageIndicator(
+                      controller: pageController, // Use the same controller
+                      count: pageViewsItems.length,
+                      effect: const ExpandingDotsEffect(
+                        dotWidth: 15,
+                        dotHeight: 11,
+                        dotColor: Colors.grey,
+                        activeDotColor: Colors.red,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               const Spacer(),
               GestureDetector(
                   onTap: () {
-                    if (pageController.page! < 1) {
+                    if (currentindex < pageViewsItems.length - 1) {
                       pageController.nextPage(
-                        duration: const Duration(microseconds: 300),
+                        duration: const Duration(milliseconds: 300),
                         curve: Curves.easeIn,
                       );
                     } else {
-                      // Navigator.push(context,
-                      //     MaterialPageRoute(builder: (context) => Home()));
+                      // Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
                     }
                   },
                   child: Padding(
@@ -89,8 +106,7 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
                         borderRadius: BorderRadius.circular(30),
                         color: primary,
                       ),
-
-                      // ignore: sort_child_properties_last
+                      width: double.infinity,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
                           vertical: 13,
@@ -105,8 +121,6 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold)),
                       ),
-
-                      width: double.infinity,
                     ),
                   )),
             ],
@@ -134,7 +148,7 @@ List pageViewsItems = [
   ),
   const PageViewItem(
     image:
-        "https://img.freepik.com/premium-vector/red-clock-with-number-2-it_1161162-852983.jpg?uid=R158354479&ga=GA1.1.396071233.1723121552&semt=ais_hybrid",
+        "https://img.freepik.com/free-vector/time-flies-concept-illustration_114360-9739.jpg?uid=R158354479&ga=GA1.1.396071233.1723121552",
     text: 'Time for a Health Break',
     text2:
         "It's always the right time to prioritize your mental well-being. Take a moment for yourself today",

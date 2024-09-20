@@ -24,7 +24,7 @@ class PageViewItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 60,
+                  height: 45,
                 ),
                 Container(
                   decoration: BoxDecoration(
@@ -37,24 +37,27 @@ class PageViewItem extends StatelessWidget {
                   ),
                   height: MediaQuery.of(context).size.height * .40,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 7,
                 ),
                 Center(
                   child: Text(
                     "$text",
-                    style: TextStyle(fontSize: 22, color: Colors.black),
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
                   ),
                 ),
                 SizedBox(
-                  height: 5,
+                  height: 2,
                 ),
                 Center(
                   child: Text(
                     textAlign: TextAlign.center,
                     "$text2",
                     style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 13,
                         color: Color.fromARGB(255, 116, 107, 121)),
                   ),
                 ),
