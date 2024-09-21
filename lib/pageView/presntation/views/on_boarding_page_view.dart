@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:therapy_splasher/constants/clors.dart';
+import 'package:therapy_splasher/home/home_screen.dart';
 import 'package:therapy_splasher/pageView/presntation/views/page_view_item.dart';
 
 class OnBoardingPageView extends StatefulWidget {
@@ -37,17 +38,26 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
             children: [
               GestureDetector(
                   onTap: () {
-                    // Navigator.push(context, MaterialPageRoute(builder: (context) => ()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
                   },
-                  child: const Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Padding(
                         padding: EdgeInsets.all(20),
-                        child: Text(
-                          "skip",
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HomeScreen()));
+                          },
+                          child: Text(
+                            "skip",
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ],
@@ -95,7 +105,10 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
                         curve: Curves.easeIn,
                       );
                     } else {
-                      // Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomeScreen()));
                     }
                   },
                   child: Padding(

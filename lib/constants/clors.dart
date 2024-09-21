@@ -4,3 +4,4 @@ import 'package:flutter/material.dart';
 
 Color primary = Colors.red;
 Color secobd = Colors.blue;
+Color white = Colors.white;

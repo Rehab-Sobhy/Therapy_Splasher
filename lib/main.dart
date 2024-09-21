@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:therapy_splasher/pageView/presntation/views/on_boarding_page_view.dart';
+import 'package:therapy_splasher/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         useMaterial3: true,
       ),
-      home: const OnBoardingPageView(),
+      home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
