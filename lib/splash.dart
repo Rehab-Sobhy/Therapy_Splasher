@@ -10,14 +10,25 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  // Declare opacity value
+  double _opacity = 0.0;
+
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 2), () {
+    super.initState();
+
+    // Start fade-in animation on screen load
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        _opacity = 1.0; // Change opacity to 1 to start the animation
+      });
+    });
+
+    // Navigate to the next screen after a delay
+    Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => OnBoardingPageView()));
     });
-    // TODO: implement initState
-    super.initState();
   }
 
   @override
@@ -25,9 +36,15 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: Container(
-            height: 150,
-            child: Image.asset("assets/images/splash.png", fit: BoxFit.cover)),
+        child: AnimatedOpacity(
+          opacity: _opacity, // The opacity will animate based on this value
+          duration: const Duration(seconds: 2), // Duration of fade-in effect
+          curve: Curves.easeIn, // Animation curve for a smoother transition
+          child: Container(
+            height: 300,
+            child: Image.asset("assets/images/splash.png", fit: BoxFit.cover),
+          ),
+        ),
       ),
     );
   }
