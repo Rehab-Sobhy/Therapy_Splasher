@@ -52,9 +52,9 @@ class TextFormFieldCustom extends StatelessWidget {
           hintText: labelText,
           floatingLabelAlignment: FloatingLabelAlignment.start,
 
-          filled: true,
+          filled: true, fillColor: const Color.fromARGB(255, 245, 209, 202),
           labelStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(
-              color: primary, overflow: TextOverflow.clip, fontSize: 10),
+              color: Colors.black, overflow: TextOverflow.clip, fontSize: 12),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15.0),
             borderSide: const BorderSide(color: Colors.transparent, width: 0),
@@ -68,8 +68,7 @@ class TextFormFieldCustom extends StatelessWidget {
             borderSide: const BorderSide(color: Colors.transparent, width: 0),
           ),
           // labelStyle: const TextStyle(color: Colors.black45),
-          hintStyle:
-              TextStyle(color: Colors.black.withOpacity(0.25), fontSize: 10),
+          hintStyle: TextStyle(color: Colors.black, fontSize: 14),
           iconColor: Colors.grey,
         ));
   }
