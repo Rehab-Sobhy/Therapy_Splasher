@@ -22,8 +22,7 @@ class CustomDropDownList extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       decoration: BoxDecoration(
-        color: const Color.fromARGB(
-            255, 245, 209, 202), // Background color for the dropdown
+        color: Colors.grey[200], // Background color for the dropdown
         borderRadius: BorderRadius.circular(10),
         // Optional border
       ),

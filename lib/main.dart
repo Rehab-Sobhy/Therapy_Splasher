@@ -1,5 +1,5 @@
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
-import 'package:therapy_splasher/home/home_screen.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:therapy_splasher/navgation_bar.dart';
 
@@ -7,13 +7,19 @@ FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  var initializationSettingsAndroid =
-      AndroidInitializationSettings('@mipmap/ic_launcher');
-  var initializationSettings = InitializationSettings(
-    android: initializationSettingsAndroid,
+  AwesomeNotifications().initialize(
+    null, // Default icon for notifications
+    [
+      NotificationChannel(
+        channelKey: 'medicine_channel',
+        channelName: 'Medicine Alarm',
+        channelDescription: 'Notification channel for medicine reminders',
+        defaultColor: Colors.teal,
+        importance: NotificationImportance.High,
+        channelShowBadge: true,
+      ),
+    ],
   );
-  flutterLocalNotificationsPlugin.initialize(initializationSettings);
 
   runApp(MyApp());
 }
