@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:therapy_splasher/home/home_screen.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+
+FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+    FlutterLocalNotificationsPlugin();
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  var initializationSettingsAndroid =
+      AndroidInitializationSettings('@mipmap/ic_launcher');
+  var initializationSettings = InitializationSettings(
+    android: initializationSettingsAndroid,
+  );
+  flutterLocalNotificationsPlugin.initialize(initializationSettings);
+
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
