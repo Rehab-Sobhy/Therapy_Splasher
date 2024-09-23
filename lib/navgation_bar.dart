@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:meals_splasher/Admin_only/settings/presentation/views/settings_view.dart';
-import 'package:meals_splasher/user_only/cart.dart';
-import 'package:meals_splasher/user_only/favourite/favorite.dart';
-import 'package:meals_splasher/user_only/home/home_screen.dart';
-import 'package:meals_splasher/user_only/orders/orders.dart';
+import 'package:therapy_splasher/add_medicine/add%20medicine.dart';
+import 'package:therapy_splasher/home/home_screen.dart';
+import 'package:therapy_splasher/notification_screen.dart';
 
-class Home extends StatefulWidget {
+class NavBar extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _NavBarState createState() => _NavBarState();
 }
 
-class _HomeState extends State<Home> {
+class _NavBarState extends State<NavBar> {
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
@@ -27,9 +25,8 @@ class _HomeState extends State<Home> {
         // ignore: prefer_const_literals_to_create_immutables
         children: <Widget>[
           HomeScreen(),
-          CartScreen(),
-          const FavoriteScreen(),
-          const SettingsView(),
+          AddMedicine(),
+          NotificationScreen(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -40,20 +37,16 @@ class _HomeState extends State<Home> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_bag_outlined),
+            icon: Icon(Icons.add_alarm),
             label: 'My Cart',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_border),
+            icon: Icon(Icons.notifications_active),
             label: 'Favorite',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Setting',
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.green,
+        selectedItemColor: Colors.red,
         unselectedItemColor: Colors.grey,
         onTap: _onItemTapped,
         type: BottomNavigationBarType.fixed,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:therapy_splasher/home/home_screen.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:therapy_splasher/navgation_bar.dart';
 
 FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         textTheme: TextTheme(),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: NavBar(),
       debugShowCheckedModeBanner: false,
     );
   }

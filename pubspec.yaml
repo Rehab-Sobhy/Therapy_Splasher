@@ -39,6 +39,7 @@ dependencies:
   easy_localization: ^3.0.7
   shared_preferences: ^2.3.2
   flutter_local_notifications: ^17.2.3
+  awesome_notifications: ^0.9.3+1
 
 dev_dependencies:
   flutter_test:

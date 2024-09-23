@@ -1,4 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<receiver android:name="me.carda.awesome_notifications.notifications.receivers.ActionReceiver" />
+<receiver android:name="me.carda.awesome_notifications.notifications.receivers.DismissedReceiver" />
+<receiver android:name="me.carda.awesome_notifications.notifications.receivers.NotificationReceiver" android:exported="true">
+    <intent-filter>
+        <action android:name="me.carda.awesome_notifications.notifications.action.SCHEDULED" />
+    </intent-filter>
+</receiver>
+
     <application
         android:label="therapy_splasher"
         android:name="${applicationName}"
