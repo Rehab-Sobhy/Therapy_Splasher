@@ -52,7 +52,7 @@ class TextFormFieldCustom extends StatelessWidget {
           hintText: labelText,
           floatingLabelAlignment: FloatingLabelAlignment.start,
 
-          filled: true, fillColor: const Color.fromARGB(255, 245, 209, 202),
+          filled: true, fillColor: Colors.grey[200],
           labelStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(
               color: Colors.black, overflow: TextOverflow.clip, fontSize: 12),
           border: OutlineInputBorder(
